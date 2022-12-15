@@ -2,7 +2,7 @@
 
 ## Prerequisites ##
 
-Grafana ≥ 2.5.0
+Grafana ≥ 9.1.0
 
 Embrace Metrics API Token. This can be found in the Settings page.
 
@@ -16,4 +16,4 @@ The Embrace Grafana App gives you a real-time view into your mobile app performa
 [Embrace](https://dev.embrace.io/docs/embrace-api/grafana_integrations/#setting-up-embrace-as-a-datasource)
 
 ### Feedback and Questions ###
-We would love to hear what you think of this app and if you have any feature requests for future versions. Please submit any issues with the app on Github or [contact us directly](https://embrace.io/contact/?).
+We would love to hear what you think of this app and if you have any feature requests for future versions. Please submit any issues with the app on [Github](https://github.com/embrace-io/grafana-metric-plugin/issues) or [contact us directly](https://embrace.io/contact/?).

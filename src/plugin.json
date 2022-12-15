@@ -13,7 +13,10 @@
       "small": "img/logo.png",
       "large": "img/logo.png"
     },
-    "screenshots": [],
+    "screenshots": [
+      {"name": "sessions", "path": "img/sessions.png"},
+      {"name": "crashes_users", "path": "img/crashes_users.png"}
+    ],
     "version": "%VERSION%",
     "updated": "%TODAY%"
   },
@@ -28,7 +31,7 @@
     }
   ],
   "dependencies": {
-    "grafanaDependency": ">=2.5.0",
+    "grafanaDependency": ">=9.1.0",
     "plugins": []
   }
 }
