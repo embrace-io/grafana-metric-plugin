@@ -2,7 +2,7 @@
   "$schema": "https://raw.githubusercontent.com/grafana/grafana/master/docs/sources/developers/plugins/plugin.schema.json",
   "type": "app",
   "name": "Embrace Mobile",
-  "id": "embraceio-app",
+  "id": "embraceio-metric-app",
   "info": {
     "keywords": ["app"],
     "description": "Mobile observability and data platform that empowers mobile teams to deliver optimal user experiences",
@@ -13,7 +13,10 @@
       "small": "img/logo.png",
       "large": "img/logo.png"
     },
-    "screenshots": [],
+    "screenshots": [
+      {"name": "sessions", "path": "img/sessions.png"},
+      {"name": "crashes_users", "path": "img/crashes_users.png"}
+    ],
     "version": "%VERSION%",
     "updated": "%TODAY%"
   },
@@ -28,7 +31,7 @@
     }
   ],
   "dependencies": {
-    "grafanaDependency": ">=2.5.0",
+    "grafanaDependency": ">=9.1.0",
     "plugins": []
   }
 }
