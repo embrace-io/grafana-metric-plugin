@@ -1,7 +1,7 @@
 import React, {FC, useCallback, useEffect, useState} from 'react';
 import {AppPluginMeta, PluginConfigPageProps} from '@grafana/data';
 import {getBackendSrv} from '@grafana/runtime';
-import {Button} from '@grafana/ui';
+import {Button, InlineField, Input} from '@grafana/ui';
 import {ApplicationName, ApplicationRoot} from '../../constants';
 import {GlobalSettings} from '../../types';
 
@@ -116,19 +116,17 @@ export const Config: FC<Props> = (props) => {
                     <p>
                         Get out-of-the-box Embrace dashboards in minutes with our simple configuration. Enter your Embrace API Token below and click to Enable the Application.
                     </p>
-                    <form>
-                        <label>
-                            Embrace API Token: &nbsp;
-                            <input
-                                type="text"
-                                value={apiToken}
-                                onChange={(e) => setApiToken(e.target.value)}
-                                size={50}
-                            />
-                        </label>
-                    </form>
-                    {showErrorMessage &&
-                        <p style={{color: 'red'}}> Your API token was invalid. Please try again. </p>}
+                    <InlineField
+                        label="Embrace API Token"
+                        error="Your API token was invalid. Please try again"
+                        invalid={showErrorMessage}
+                    >
+                        <Input placeholder="Token"
+                               onChange={(e) => setApiToken(e.currentTarget.value)}
+                               value={apiToken}
+                               width={50}
+                               />
+                    </InlineField>
                 </React.Fragment>
             )}
             <div className="gf-form gf-form-button-row">

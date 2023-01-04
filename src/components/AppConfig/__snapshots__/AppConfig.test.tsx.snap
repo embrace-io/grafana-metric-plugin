@@ -11,16 +11,33 @@ exports[`Components/AppConfig renders without an error" 1`] = `
   <p>
     Get out-of-the-box Embrace dashboards in minutes with our simple configuration. Enter your Embrace API Token below and click to Enable the Application.
   </p>
-  <form>
-    <label>
-      Embrace API Token:  
-      <input
-        size="50"
-        type="text"
-        value=""
-      />
+  <div
+    class="css-1f5gueu"
+  >
+    <label
+      class="css-1pews2r"
+    >
+      Embrace API Token
     </label>
-  </form>
+    <div
+      class="css-1rfunm5"
+    >
+      <div
+        class="css-p7rfez-input-wrapper"
+        data-testid="input-wrapper"
+      >
+        <div
+          class="css-1w5c5dq-input-inputWrapper"
+        >
+          <input
+            class="css-1wdli31-input-input"
+            placeholder="Token"
+            value=""
+          />
+        </div>
+      </div>
+    </div>
+  </div>
   <div
     class="gf-form gf-form-button-row"
   >
