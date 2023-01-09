@@ -72,20 +72,6 @@ export const Config: FC<Props> = (props) => {
                 url: 'https://api.embrace.io/metrics',
                 jsonData: {httpMethod: 'POST', httpHeaderName1: 'Authorization'},
                 secureJsonData: {httpHeaderValue1: 'Bearer ' + apiToken},
-                secureJsonFields: {httpHeaderValue1: true},
-                accessControl: {
-                    "alert.instances.external:read": true,
-                    "alert.instances.external:write": true,
-                    "alert.notifications.external:read": true,
-                    "alert.notifications.external:write": true,
-                    "alert.rules.external:read": true,
-                    "alert.rules.external:write": true,
-                    "datasources.id:read": true,
-                    "datasources:delete": true,
-                    "datasources:query": true,
-                    "datasources:read": true,
-                    "datasources:write": true
-                },
             });
 
         // Test if token is valid
