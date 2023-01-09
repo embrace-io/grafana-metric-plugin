@@ -13,7 +13,7 @@ The Embrace Grafana App gives you a real-time view into your mobile app performa
 ## Getting Help ##
 
 ### Documentation ###
-[Embrace](https://dev.embrace.io/docs/embrace-api/grafana_integrations/#setting-up-embrace-as-a-datasource)
+[Embrace](https://embrace.io/docs/embrace-api/grafana_integrations/#setting-up-embrace-as-a-datasource)
 
 ### Feedback and Questions ###
 We would love to hear what you think of this app and if you have any feature requests for future versions. Please submit any issues with the app on [Github](https://github.com/embrace-io/grafana-metric-plugin/issues) or [contact us directly](https://embrace.io/contact/?).
