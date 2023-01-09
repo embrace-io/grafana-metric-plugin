@@ -12,6 +12,8 @@ zip_filename="${zip_folder}/embrace-io-metric-app-${release_version}.zip"
 
 yarn install --pure-lockfile
 yarn build
+# Remove the previous artifact from the run
+rm -rf embraceio-metric-app/
 mv dist/ embraceio-metric-app/
 mkdir -p $zip_folder
 zip $zip_filename embraceio-metric-app -r
