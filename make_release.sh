@@ -8,7 +8,7 @@ if [ -z "$release_version" ]; then
 fi
 
 zip_folder="zip"
-zip_filename="${zip_folder}/embrace-io-metric-app-${release_version}.zip"
+zip_filename="${zip_folder}/embraceio-metric-app-${release_version}.zip"
 
 yarn install --pure-lockfile
 yarn build
