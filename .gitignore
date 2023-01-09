@@ -33,5 +33,5 @@ e2e-results/
 
 .eslintcache
 
-./embraceio-metric-app
-./zip
+embraceio-metric-app/
+zip/
