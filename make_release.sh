@@ -20,6 +20,6 @@ MD5_HASH=$(md5 $zip_filename | awk '{print $4}')
 echo -e "\n\n"
 echo "Success 🎉🎉🎉"
 echo "Please provide the following for the plugin submission update"
-echo "Plugin URL:  https://github.com/embrace-io/grafana-metric-plugin/tree/master/${zip_filename}"
+echo "Plugin URL:  https://github.com/embrace-io/grafana-metric-plugin/blob/main/${zip_filename}?raw=true"
 echo "MD5:         $MD5_HASH"
 echo "Source Code: https://github.com/embrace-io/grafana-metric-plugin"
