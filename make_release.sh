@@ -7,6 +7,9 @@ if [ -z "$release_version" ]; then
   exit 1
 fi
 
+
+source .env
+
 zip_folder="zip"
 zip_filename="${zip_folder}/embraceio-metric-app-${release_version}.zip"
 
@@ -14,10 +17,13 @@ yarn install --pure-lockfile
 yarn build
 # Remove the previous artifact from the run
 rm -rf embraceio-metric-app/
+npx @grafana/sign-plugin
 mv dist/ embraceio-metric-app/
 mkdir -p $zip_folder
 zip $zip_filename embraceio-metric-app -r
 MD5_HASH=$(md5 $zip_filename | awk '{print $4}')
+
+plugincheck2 -config config/default.yaml $zip_filename
 
 echo -e "\n\n"
 echo "Success 🎉🎉🎉"
