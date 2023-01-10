@@ -215,7 +215,7 @@
     {
      "datasource": {
       "type": "prometheus",
-      "uid": "VSzgcjZ4k"
+      "uid": "${source}"
      },
      "editorMode": "code",
      "expr": "sum(sessions_total{app_id=\"$app_id\"}) by (app_version, os_version)",
@@ -331,7 +331,7 @@
     {
      "datasource": {
       "type": "prometheus",
-      "uid": "VSzgcjZ4k"
+      "uid": "${source}"
      },
      "editorMode": "code",
      "expr": "(1 - sum(crashed_session_pct{app_id=\"$app_id\"} * sessions_total{app_id=\"$app_id\"})\n/\n(sum(sessions_total{app_id=\"$app_id\"}))) * 100",
@@ -424,7 +424,7 @@
     {
      "datasource": {
       "type": "prometheus",
-      "uid": "VSzgcjZ4k"
+      "uid": "${source}"
      },
      "editorMode": "code",
      "expr": "sum(sessions_total{app_id=\"$app_id\"}) by (app_version, os_version)",
@@ -496,7 +496,7 @@
     {
      "datasource": {
       "type": "prometheus",
-      "uid": "VSzgcjZ4k"
+      "uid": "${source}"
      },
      "expr": "sum(sessions_by_device_model_total{app_id=\"$app_id\"}) by (device_model) ",
      "refId": "A"
@@ -607,7 +607,7 @@
     {
      "datasource": {
       "type": "prometheus",
-      "uid": "VSzgcjZ4k"
+      "uid": "${source}"
      },
      "expr": "sum(sessions_total{app_id=\"$app_id\"})",
      "refId": "A"
@@ -698,7 +698,7 @@
     {
      "datasource": {
       "type": "prometheus",
-      "uid": "VSzgcjZ4k"
+      "uid": "${source}"
      },
      "editorMode": "code",
      "expr": "sum(sessions_total{app_id=\"$app_id\", app_version=\"app_version_1\"}) by (app_version)",
@@ -709,7 +709,7 @@
     {
      "datasource": {
       "type": "prometheus",
-      "uid": "VSzgcjZ4k"
+      "uid": "${source}"
      },
      "editorMode": "code",
      "expr": "sum(sessions_total{app_id=\"$app_id\", app_version=\"app_version_2\"}) by (app_version)",
@@ -725,7 +725,7 @@
   {
    "datasource": {
     "type": "prometheus",
-    "uid": "xy9VCmM4z"
+    "uid": "${source}"
    },
    "gridPos": {
     "h": 8,
@@ -839,7 +839,7 @@
     {
      "datasource": {
       "type": "prometheus",
-      "uid": "VSzgcjZ4k"
+      "uid": "${source}"
      },
      "editorMode": "code",
      "expr": "sum(crash_total{app_id=\"$app_id\"}) by (app_version)",
@@ -932,7 +932,7 @@
     {
      "datasource": {
       "type": "prometheus",
-      "uid": "VSzgcjZ4k"
+      "uid": "${source}"
      },
      "editorMode": "code",
      "expr": "sum(crashed_session_pct{app_id=\"$app_id\"}) by (app_version) * sum(sessions_total{app_id=\"$app_id\"}) by (app_version)",
@@ -1025,7 +1025,7 @@
     {
      "datasource": {
       "type": "prometheus",
-      "uid": "VSzgcjZ4k"
+      "uid": "${source}"
      },
      "expr": "sum(crash_total{app_id=\"$app_id\"})",
      "refId": "A"
@@ -1131,7 +1131,7 @@
     {
      "datasource": {
       "type": "prometheus",
-      "uid": "VSzgcjZ4k"
+      "uid": "${source}"
      },
      "editorMode": "code",
      "expr": "sum(user_total{app_id=\"$app_id\"}) by (app_version)",
@@ -1224,7 +1224,7 @@
     {
      "datasource": {
       "type": "prometheus",
-      "uid": "VSzgcjZ4k"
+      "uid": "${source}"
      },
      "editorMode": "code",
      "expr": "sum(crashed_user_total{app_id=\"$app_id\"}) by (app_version)",
@@ -1317,7 +1317,7 @@
     {
      "datasource": {
       "type": "prometheus",
-      "uid": "VSzgcjZ4k"
+      "uid": "${source}"
      },
      "expr": "sum(user_total{app_id=\"$app_id\"})",
      "refId": "A"
