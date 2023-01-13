@@ -1,7 +1,7 @@
 /**
  * Application root page
  */
-export const ApplicationRoot = '/d/0-0000000/embrace-pull-api-dashboard';
+export const ApplicationRoot = '/d/0-0000000/embrace-metrics-api-dashboard';
 
 /**
  * Application
