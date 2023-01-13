@@ -13,16 +13,21 @@ source .env
 zip_folder="zip"
 zip_filename="${zip_folder}/embraceio-metric-app-${release_version}.zip"
 
+# Build the project
 yarn install --pure-lockfile
 yarn build
 # Remove the previous artifact from the run
 rm -rf embraceio-metric-app/
+# Sign the plugin
 npx @grafana/sign-plugin
+# Rename the build to the name of the plugin
 mv dist/ embraceio-metric-app/
+# Create zip artifact
 mkdir -p $zip_folder
 zip $zip_filename embraceio-metric-app -r
 MD5_HASH=$(md5 $zip_filename | awk '{print $4}')
 
+# Verify the artifact
 plugincheck2 -config config/default.yaml $zip_filename
 
 echo -e "\n\n"
