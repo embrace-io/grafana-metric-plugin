@@ -1,0 +1,87 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  release:
+    types: [released]
+
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16'
+          cache: 'yarn'
+      - name: Install dependencies
+        run: yarn install --immutable --prefer-offline
+      - name: Check types
+        run: yarn typecheck
+      - name: Lint
+        run: yarn lint
+      - name: Unit tests
+        run: yarn test:ci
+
+  e2e-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16'
+          cache: 'yarn'
+      - name: Install dependencies
+        run: yarn install --immutable --prefer-offline
+      - name: Build dependencies
+        run: yarn build
+      - name: Start grafana docker
+        run: yarn server -d
+      - name: Run e2e tests
+        run: yarn e2e
+      - name: Stop grafana docker
+        run: docker-compose down
+
+  build:
+    runs-on: ubuntu-latest
+    needs:
+      - tests
+      - e2e-tests
+    if: ${{ github.event_name == 'release' && github.event.action == 'released' }}
+    env:
+      FILENAME: embraceio-metric-app-${{ github.event.release.tag_name }}.zip
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16'
+          cache: 'yarn'
+      - name: Install dependencies
+        run: yarn install --pure-lockfile
+      - name: Build dependencies
+        run: yarn build
+      - name: Sign Grafana plugin
+        run: npx @grafana/sign-plugin
+        env:
+          GRAFANA_API_KEY: ${{ secrets.GRAFANA_API_KEY }}
+      - name: Rename dist directory
+        run: mv dist/ embraceio-metric-app/
+      - name: Zip app directory
+        run: zip -r $FILENAME ./embraceio-metric-app
+      - name: Generate MD5 hash file
+        run: echo "$(md5sum ./$FILENAME | awk '{print $1}')" > md5.txt
+      - name: Upload release
+        run: gh release upload "${{ github.event.release.tag_name }}" $FILENAME md5.txt
+        env:
+          GITHUB_TOKEN: ${{ secrets.CD_GITHUB_TOKEN }}
