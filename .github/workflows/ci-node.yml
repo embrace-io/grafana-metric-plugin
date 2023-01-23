@@ -56,6 +56,8 @@ jobs:
       - tests
       - e2e-tests
     if: ${{ github.event_name == 'release' && github.event.action == 'released' }}
+    permissions:
+      contents: read
     env:
       FILENAME: embraceio-metric-app-${{ github.event.release.tag_name }}.zip
     steps:
@@ -84,4 +86,4 @@ jobs:
       - name: Upload release
         run: gh release upload "${{ github.event.release.tag_name }}" $FILENAME md5.txt
         env:
-          GITHUB_TOKEN: ${{ secrets.CD_GITHUB_TOKEN }}
+          GH_TOKEN: ${{ github.token }}
