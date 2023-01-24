@@ -84,6 +84,6 @@ jobs:
       - name: Generate MD5 hash file
         run: echo "$(md5sum ./$FILENAME | awk '{print $1}')" > md5.txt
       - name: Upload release
-        run: gh release upload "${{ github.event.release.tag_name }}" $FILENAME md5.txt
+        run: gh release upload "${{ github.event.release.tag_name }}" $FILENAME md5.txt --clobber
         env:
           GH_TOKEN: ${{ github.token }}
