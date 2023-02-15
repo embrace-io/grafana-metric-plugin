@@ -56,8 +56,6 @@ jobs:
       - tests
       - e2e-tests
     if: ${{ github.event_name == 'release' && contains(fromJSON('["released", "prereleased"]'), github.event.action) }}
-    permissions:
-      contents: read
     env:
       FILENAME: embraceio-metric-app-${{ github.event.release.tag_name }}.zip
     steps:
