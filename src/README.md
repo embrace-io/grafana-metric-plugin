@@ -8,6 +8,10 @@ Embrace Metrics API Token. This can be found in the Settings page.
 Embrace’s unified mobile observability and monitoring platform provides deep insights into your user journey to help mobile teams build better experiences. Embrace auto-collects and aggregates all of your mobile signals to produce out-of-the-box user sessions, analytics and unified dashboards that help fuel your mobile growth.
 The Embrace Grafana App gives you a real-time view into your mobile app performance, including crash sessions, deployment tracking, and the overall health and trends of your mobile app. It’s an easy way to visualize and correlate Embrace dashboards alongside your existing Grafana dashboards and data sources.
 
+[Request a demo of Embrace](https://go.embrace.io/PART-Grafana-RAD_1GO.html)
+
+[Embrace Free Trial](https://dash.embrace.io/app)
+
 ## Getting Help ##
 
 ### Documentation ###
