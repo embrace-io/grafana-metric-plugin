@@ -3,10 +3,10 @@
 exports[`Components/AppConfig renders without an error" 1`] = `
 <div>
   <h2>
-    Embrace Mobile
+    Embrace
   </h2>
   <p>
-    The Embrace Mobile App is a plugin for Grafana that gives teams an easy way to visualize Embrace dashboards using Embrace Metrics API data powered by Prometheus.
+    The Embrace App is a plugin for Grafana that gives teams an easy way to visualize Embrace dashboards using Embrace Metrics API data powered by Prometheus.
   </p>
   <p>
     Get out-of-the-box Embrace dashboards in minutes with our simple configuration. Enter your Embrace API Token below and click to Enable the Application.
