@@ -96,7 +96,7 @@ export const Config: FC<Props> = (props) => {
     return (
         <React.Fragment>
             <h2>{ApplicationName}</h2>
-            <p>The Embrace Mobile App is a plugin for Grafana that gives teams an easy way to visualize Embrace dashboards using Embrace Metrics API data powered by Prometheus.</p>
+            <p>The Embrace App is a plugin for Grafana that gives teams an easy way to visualize Embrace dashboards using Embrace Metrics API data powered by Prometheus.</p>
             {!isEnabled && (
                 <React.Fragment>
                     <p>

@@ -1,7 +1,7 @@
 {
   "$schema": "https://raw.githubusercontent.com/grafana/grafana/master/docs/sources/developers/plugins/plugin.schema.json",
   "type": "app",
-  "name": "Embrace Mobile",
+  "name": "Embrace",
   "id": "embraceio-metric-app",
   "info": {
     "keywords": ["app"],
