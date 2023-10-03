@@ -40,7 +40,7 @@
    },
    "id": 26,
    "options": {
-    "content": "![icon]( https://embrace.io/images/embrace_color_logo.png )",
+    "content": "![icon]( https://embrace.io/docs/images/grafana_embrace_logo.png )",
     "mode": "markdown"
    },
    "pluginVersion": "9.1.2",

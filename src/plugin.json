@@ -13,6 +13,16 @@
       "small": "img/logo.png",
       "large": "img/logo.png"
     },
+    "links": [
+      {
+        "name": "Website",
+        "url": "https://embrace.io/"
+      },
+      {
+        "name": "Documentation",
+        "url": "https://embrace.io/docs/"
+      }
+    ],
     "screenshots": [
       {"name": "sessions", "path": "img/sessions.png"},
       {"name": "crashes_users", "path": "img/crashes_users.png"}
