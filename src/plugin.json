@@ -4,10 +4,11 @@
   "name": "Embrace",
   "id": "embraceio-metric-app",
   "info": {
-    "keywords": ["app"],
+    "keywords": ["android","ios","mobile","anr"],
     "description": "Mobile observability and data platform that empowers mobile teams to deliver optimal user experiences",
     "author": {
-      "name": "Embrace"
+      "name": "Embrace",
+      "url": "https://embrace.io/"
     },
     "logos": {
       "small": "img/logo.png",
@@ -33,7 +34,7 @@
   "includes": [
     {
       "type": "dashboard",
-      "name": "System overview",
+      "name": "Overview Dashboard",
       "path": "dashboards/overview.json",
       "addToNav": true,
       "defaultNav": true,
