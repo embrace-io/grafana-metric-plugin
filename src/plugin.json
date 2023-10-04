@@ -28,7 +28,7 @@
       {"name": "sessions", "path": "img/sessions.png"},
       {"name": "crashes_users", "path": "img/crashes_users.png"}
     ],
-    "version": "0.0.0",
+    "version": "%VERSION%",
     "updated": "%TODAY%"
   },
   "includes": [
