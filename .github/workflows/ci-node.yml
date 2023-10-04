@@ -69,7 +69,7 @@ jobs:
           cache: 'yarn'
       - name: Update version on package.json
         run: |
-          sed -i "s/\"version\": \"1.0.0\"/\"version\": \"${{ github.event.release.tag_name }}\"/g" package.json
+          sed -i "s/\"version\": \"0.0.0\"/\"version\": \"${{ github.event.release.tag_name }}\"/g" package.json
       - name: Install dependencies
         run: yarn install --pure-lockfile
       - name: Build dependencies
