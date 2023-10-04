@@ -65,11 +65,11 @@ jobs:
       - name: Setup Node.js environment
         uses: actions/setup-node@v3
         with:
-          node-version: '16'
+          node-version: '18'
           cache: 'yarn'
-      - name: Update version on package.json
+      - name: Update version in package.json and plugin.json
         run: |
-          sed -i "s/\"version\": \"1.0.0\"/\"version\": \"${{ github.event.release.tag_name }}\"/g" package.json
+          sed -i 's/"version": "0.0.0"/"version": "${{ github.event.release.tag_name }}"/g' package.json src/plugin.json
       - name: Install dependencies
         run: yarn install --pure-lockfile
       - name: Build dependencies
