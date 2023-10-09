@@ -146,13 +146,13 @@
       "uid": "${source}"
      },
      "editorMode": "code",
-     "expr": "sum(sessions_total{app_id=\"$app_id\"}) by (app_version)",
+     "expr": "sum(hourly_sessions_total{app_id=\"$app_id\"}) by (app_version)",
      "legendFormat": "{{label_name}}",
      "range": true,
      "refId": "A"
     }
    ],
-   "title": "Sessions By All App Versions",
+   "title": "Sessions By App Versions",
    "type": "timeseries"
   },
   {
@@ -218,7 +218,7 @@
       "uid": "${source}"
      },
      "editorMode": "code",
-     "expr": "sum(sessions_total{app_id=\"$app_id\"}) by (app_version, os_version)",
+     "expr": "sum(hourly_sessions_total{app_id=\"$app_id\"}) by (app_version, os_version)",
      "legendFormat": "",
      "range": true,
      "refId": "A"
@@ -334,7 +334,7 @@
       "uid": "${source}"
      },
      "editorMode": "code",
-     "expr": "(1 - sum(crashed_session_pct{app_id=\"$app_id\"} * sessions_total{app_id=\"$app_id\"})\n/\n(sum(sessions_total{app_id=\"$app_id\"}))) * 100",
+     "expr": "(1 - sum(hourly_crashes_total{app_id=\"$app_id\"})\n/\n(sum(hourly_sessions_total{app_id=\"$app_id\"}))) * 100",
      "legendFormat": "{{label_name}}",
      "range": true,
      "refId": "A"
@@ -427,13 +427,13 @@
       "uid": "${source}"
      },
      "editorMode": "code",
-     "expr": "sum(sessions_total{app_id=\"$app_id\"}) by (app_version, os_version)",
+     "expr": "sum(hourly_sessions_total{app_id=\"$app_id\"}) by (app_version, os_version)",
      "legendFormat": "{{app_version}} - {{os_version}}",
      "range": true,
      "refId": "A"
     }
    ],
-   "title": "Sessions By All App Version, OS Version",
+   "title": "Sessions By App Version, OS Version",
    "type": "timeseries"
   },
   {
@@ -498,7 +498,7 @@
       "type": "prometheus",
       "uid": "${source}"
      },
-     "expr": "sum(sessions_by_device_model_total{app_id=\"$app_id\"}) by (device_model) ",
+     "expr": "sum(hourly_sessions_total{app_id=\"$app_id\"}) by (device_model) ",
      "refId": "A"
     }
    ],
@@ -609,7 +609,7 @@
       "type": "prometheus",
       "uid": "${source}"
      },
-     "expr": "sum(sessions_total{app_id=\"$app_id\"})",
+     "expr": "sum(hourly_sessions_total{app_id=\"$app_id\"})",
      "refId": "A"
     }
    ],
@@ -701,7 +701,7 @@
       "uid": "${source}"
      },
      "editorMode": "code",
-     "expr": "sum(sessions_total{app_id=\"$app_id\", app_version=\"app_version_1\"}) by (app_version)",
+     "expr": "sum(hourly_sessions_total{app_id=\"$app_id\", app_version=\"app_version_1\"}) by (app_version)",
      "legendFormat": "{{label_name}}",
      "range": true,
      "refId": "A"
@@ -712,7 +712,7 @@
       "uid": "${source}"
      },
      "editorMode": "code",
-     "expr": "sum(sessions_total{app_id=\"$app_id\", app_version=\"app_version_2\"}) by (app_version)",
+     "expr": "sum(hourly_sessions_total{app_id=\"$app_id\", app_version=\"app_version_2\"}) by (app_version)",
      "hide": false,
      "legendFormat": "{{label_name}}",
      "range": true,
@@ -735,7 +735,7 @@
    },
    "id": 33,
    "options": {
-    "content": "Override the app versions in the \"Sessions for two app versions\" with your own app versions.\n\nFor example, change\n```\nsum(sessions_total{app_id=\"$app_id\", app_version=\"app_version_1\"}) by (app_version)\n```\nto \n```\nsum(sessions_total{app_id=\"$app_id\", app_version=\"1.2.3\"}) by (app_version)\n```\n",
+    "content": "Override the app versions in the \"Sessions for two app versions\" with your own app versions.\n\nFor example, change\n```\nsum(hourly_sessions_total{app_id=\"$app_id\", app_version=\"app_version_1\"}) by (app_version)\n```\nto \n```\nsum(hourly_sessions_total{app_id=\"$app_id\", app_version=\"1.2.3\"}) by (app_version)\n```\n",
     "mode": "markdown"
    },
    "pluginVersion": "9.1.2",
@@ -842,13 +842,13 @@
       "uid": "${source}"
      },
      "editorMode": "code",
-     "expr": "sum(crash_total{app_id=\"$app_id\"}) by (app_version)",
+     "expr": "sum(hourly_crashes_total{app_id=\"$app_id\"}) by (app_version)",
      "legendFormat": "{{label_name}}",
      "range": true,
      "refId": "A"
     }
    ],
-   "title": "Crashes By All App Versions",
+   "title": "Crashes By App Versions",
    "type": "timeseries"
   },
   {
@@ -912,99 +912,6 @@
     "h": 8,
     "w": 8,
     "x": 8,
-    "y": 30
-   },
-   "id": 24,
-   "interval": "$interval",
-   "options": {
-    "legend": {
-     "calcs": [],
-     "displayMode": "list",
-     "placement": "bottom",
-     "showLegend": true
-    },
-    "tooltip": {
-     "mode": "single",
-     "sort": "none"
-    }
-   },
-   "targets": [
-    {
-     "datasource": {
-      "type": "prometheus",
-      "uid": "${source}"
-     },
-     "editorMode": "code",
-     "expr": "sum(crashed_session_pct{app_id=\"$app_id\"}) by (app_version) * sum(sessions_total{app_id=\"$app_id\"}) by (app_version)",
-     "legendFormat": "{{label_name}}",
-     "range": true,
-     "refId": "A"
-    }
-   ],
-   "title": "Crashed Session Count By All App Versions",
-   "type": "timeseries"
-  },
-  {
-   "datasource": {
-    "type": "prometheus",
-    "uid": "${source}"
-   },
-   "fieldConfig": {
-    "defaults": {
-     "color": {
-      "mode": "palette-classic"
-     },
-     "custom": {
-      "axisCenteredZero": false,
-      "axisColorMode": "text",
-      "axisLabel": "",
-      "axisPlacement": "auto",
-      "barAlignment": 0,
-      "drawStyle": "line",
-      "fillOpacity": 0,
-      "gradientMode": "none",
-      "hideFrom": {
-       "legend": false,
-       "tooltip": false,
-       "viz": false
-      },
-      "lineInterpolation": "linear",
-      "lineWidth": 1,
-      "pointSize": 5,
-      "scaleDistribution": {
-       "type": "linear"
-      },
-      "showPoints": "auto",
-      "spanNulls": false,
-      "stacking": {
-       "group": "A",
-       "mode": "none"
-      },
-      "thresholdsStyle": {
-       "mode": "off"
-      }
-     },
-     "mappings": [],
-     "thresholds": {
-      "mode": "absolute",
-      "steps": [
-       {
-        "color": "green",
-        "value": null
-       },
-       {
-        "color": "red",
-        "value": 80
-       }
-      ]
-     }
-    },
-    "overrides": []
-   },
-   "gridPos": {
-    "h": 8,
-    "w": 8,
-    "x": 16,
     "y": 30
    },
    "id": 12,
@@ -1027,303 +934,11 @@
       "type": "prometheus",
       "uid": "${source}"
      },
-     "expr": "sum(crash_total{app_id=\"$app_id\"})",
+     "expr": "sum(hourly_crashes_total{app_id=\"$app_id\"})",
      "refId": "A"
     }
    ],
    "title": "Total Crashes",
-   "type": "timeseries"
-  },
-  {
-   "collapsed": false,
-   "datasource": {
-    "uid": "${source}"
-   },
-   "gridPos": {
-    "h": 1,
-    "w": 24,
-    "x": 0,
-    "y": 38
-   },
-   "id": 20,
-   "panels": [],
-   "title": "Users",
-   "type": "row"
-  },
-  {
-   "datasource": {
-    "type": "prometheus",
-    "uid": "${source}"
-   },
-   "fieldConfig": {
-    "defaults": {
-     "color": {
-      "mode": "palette-classic"
-     },
-     "custom": {
-      "axisCenteredZero": false,
-      "axisColorMode": "text",
-      "axisLabel": "",
-      "axisPlacement": "auto",
-      "barAlignment": 0,
-      "drawStyle": "line",
-      "fillOpacity": 0,
-      "gradientMode": "none",
-      "hideFrom": {
-       "legend": false,
-       "tooltip": false,
-       "viz": false
-      },
-      "lineInterpolation": "linear",
-      "lineWidth": 1,
-      "pointSize": 5,
-      "scaleDistribution": {
-       "type": "linear"
-      },
-      "showPoints": "auto",
-      "spanNulls": false,
-      "stacking": {
-       "group": "A",
-       "mode": "none"
-      },
-      "thresholdsStyle": {
-       "mode": "off"
-      }
-     },
-     "mappings": [],
-     "thresholds": {
-      "mode": "absolute",
-      "steps": [
-       {
-        "color": "green",
-        "value": null
-       },
-       {
-        "color": "red",
-        "value": 80
-       }
-      ]
-     }
-    },
-    "overrides": []
-   },
-   "gridPos": {
-    "h": 8,
-    "w": 8,
-    "x": 0,
-    "y": 39
-   },
-   "id": 9,
-   "interval": "$interval",
-   "options": {
-    "legend": {
-     "calcs": [],
-     "displayMode": "list",
-     "placement": "bottom",
-     "showLegend": true
-    },
-    "tooltip": {
-     "mode": "single",
-     "sort": "none"
-    }
-   },
-   "targets": [
-    {
-     "datasource": {
-      "type": "prometheus",
-      "uid": "${source}"
-     },
-     "editorMode": "code",
-     "expr": "sum(user_total{app_id=\"$app_id\"}) by (app_version)",
-     "legendFormat": "{{label_name}}",
-     "range": true,
-     "refId": "A"
-    }
-   ],
-   "title": "Users By All App Versions",
-   "type": "timeseries"
-  },
-  {
-   "datasource": {
-    "type": "prometheus",
-    "uid": "${source}"
-   },
-   "fieldConfig": {
-    "defaults": {
-     "color": {
-      "mode": "palette-classic"
-     },
-     "custom": {
-      "axisCenteredZero": false,
-      "axisColorMode": "text",
-      "axisLabel": "",
-      "axisPlacement": "auto",
-      "barAlignment": 0,
-      "drawStyle": "line",
-      "fillOpacity": 0,
-      "gradientMode": "none",
-      "hideFrom": {
-       "legend": false,
-       "tooltip": false,
-       "viz": false
-      },
-      "lineInterpolation": "linear",
-      "lineWidth": 1,
-      "pointSize": 5,
-      "scaleDistribution": {
-       "type": "linear"
-      },
-      "showPoints": "auto",
-      "spanNulls": false,
-      "stacking": {
-       "group": "A",
-       "mode": "none"
-      },
-      "thresholdsStyle": {
-       "mode": "off"
-      }
-     },
-     "mappings": [],
-     "thresholds": {
-      "mode": "absolute",
-      "steps": [
-       {
-        "color": "green",
-        "value": null
-       },
-       {
-        "color": "red",
-        "value": 80
-       }
-      ]
-     }
-    },
-    "overrides": []
-   },
-   "gridPos": {
-    "h": 8,
-    "w": 8,
-    "x": 8,
-    "y": 39
-   },
-   "id": 23,
-   "interval": "$interval",
-   "options": {
-    "legend": {
-     "calcs": [],
-     "displayMode": "list",
-     "placement": "bottom",
-     "showLegend": true
-    },
-    "tooltip": {
-     "mode": "single",
-     "sort": "none"
-    }
-   },
-   "targets": [
-    {
-     "datasource": {
-      "type": "prometheus",
-      "uid": "${source}"
-     },
-     "editorMode": "code",
-     "expr": "sum(crashed_user_total{app_id=\"$app_id\"}) by (app_version)",
-     "legendFormat": "{{label_name}}",
-     "range": true,
-     "refId": "A"
-    }
-   ],
-   "title": "Crashed Users Total By All App Versions",
-   "type": "timeseries"
-  },
-  {
-   "datasource": {
-    "type": "prometheus",
-    "uid": "${source}"
-   },
-   "fieldConfig": {
-    "defaults": {
-     "color": {
-      "mode": "palette-classic"
-     },
-     "custom": {
-      "axisCenteredZero": false,
-      "axisColorMode": "text",
-      "axisLabel": "",
-      "axisPlacement": "auto",
-      "barAlignment": 0,
-      "drawStyle": "line",
-      "fillOpacity": 0,
-      "gradientMode": "none",
-      "hideFrom": {
-       "legend": false,
-       "tooltip": false,
-       "viz": false
-      },
-      "lineInterpolation": "linear",
-      "lineWidth": 1,
-      "pointSize": 5,
-      "scaleDistribution": {
-       "type": "linear"
-      },
-      "showPoints": "auto",
-      "spanNulls": false,
-      "stacking": {
-       "group": "A",
-       "mode": "none"
-      },
-      "thresholdsStyle": {
-       "mode": "off"
-      }
-     },
-     "mappings": [],
-     "thresholds": {
-      "mode": "absolute",
-      "steps": [
-       {
-        "color": "green",
-        "value": null
-       },
-       {
-        "color": "red",
-        "value": 80
-       }
-      ]
-     }
-    },
-    "overrides": []
-   },
-   "gridPos": {
-    "h": 8,
-    "w": 8,
-    "x": 16,
-    "y": 39
-   },
-   "id": 10,
-   "interval": "$interval",
-   "options": {
-    "legend": {
-     "calcs": [],
-     "displayMode": "list",
-     "placement": "bottom",
-     "showLegend": true
-    },
-    "tooltip": {
-     "mode": "single",
-     "sort": "none"
-    }
-   },
-   "targets": [
-    {
-     "datasource": {
-      "type": "prometheus",
-      "uid": "${source}"
-     },
-     "expr": "sum(user_total{app_id=\"$app_id\"})",
-     "refId": "A"
-    }
-   ],
-   "title": "Total Users",
    "type": "timeseries"
   }
  ],
@@ -1370,6 +985,11 @@
     "options": [
      {
       "selected": false,
+      "text": "5m",
+      "value": "5m"
+     },
+     {
+      "selected": false,
       "text": "60m",
       "value": "60m"
      },
@@ -1404,7 +1024,7 @@
       "value": "12hr"
      }
     ],
-    "query": "60m,90m,2hr,4hr,6hr,12hr,1d",
+    "query": "5m,60m,90m,2hr,4hr,6hr,12hr,1d",
     "queryValue": "",
     "skipUrlSync": false,
     "type": "custom"
