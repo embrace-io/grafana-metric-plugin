@@ -18,7 +18,7 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '16'
-          cache: 'yarn'
+          cache: yarn
       - name: Install dependencies
         run: yarn install --immutable --prefer-offline
       - name: Check types
@@ -38,17 +38,17 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '16'
-          cache: 'yarn'
+          cache: yarn
       - name: Install dependencies
         run: yarn install --immutable --prefer-offline
       - name: Build dependencies
         run: yarn build
-      - name: Start grafana docker
-        run: yarn server -d
+      - name: Start Grafana container
+        run: docker-compose --file compose.yaml up --detach
       - name: Run e2e tests
         run: yarn e2e
-      - name: Stop grafana docker
-        run: docker-compose down
+      - name: Stop Grafana container
+        run: docker-compose --file compose.yaml down
 
   build:
     runs-on: ubuntu-latest
