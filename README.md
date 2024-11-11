@@ -10,9 +10,10 @@
 
 ## Submission Process 
 
-1. Create a new release: https://github.com/embrace-io/grafana-metric-plugin/releases
-2. When the build is finished, locate the artifact under the Releases page
+1. Update package.json with new version
+2. Create and publish new release: https://github.com/embrace-io/grafana-metric-plugin/releases
+- When the build finishes there will be .zip and md5.txt artifacts attached to the release
 3. On [Plugins](https://grafana.com/orgs/embraceio/plugins) page, click "Submit plugin updade" and provide the following for the submission update:
 - Plugin URL: `https://github.com/embrace-io/grafana-metric-plugin/releases/download/<version>/embraceio-metric-app-<version>.zip` (copy link address from Release page)
-- MD5: Hash can be obtained from md5.txt file on Releases page
+- MD5: `https://github.com/embrace-io/grafana-metric-plugin/releases/download/<version>/md5.txt`
 - Source code: https://github.com/embrace-io/grafana-metric-plugin
