@@ -1,12 +1,10 @@
 services:
   grafana:
-    container_name: 'embrace-grafana'
-    build:
-      context: ./.config
-      args:
-        grafana_version: ${GRAFANA_VERSION:-latest}
-    ports:
-      - 3000:3000/tcp
+    extends:
+      file: .config/compose-base.yaml
+      service: grafana
+
     volumes:
-      - ./dist:/var/lib/grafana/plugins/embrace-embrace-app
+      - ./dist:/var/lib/grafana/plugins/embraceio-metric-app
       - ./provisioning:/etc/grafana/provisioning
+      - .:/root/embraceio-metric-app
