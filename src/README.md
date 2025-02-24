@@ -9,7 +9,7 @@ Embrace's unified mobile observability and monitoring platform provides deep ins
 The Embrace Grafana App gives you a real-time view into your mobile app performance, including crash sessions, deployment tracking, and the overall health and trends of your mobile app. It’s an easy way to visualize and correlate Embrace dashboards alongside your existing Grafana dashboards and data sources.
 For a full list of Embrace capabilities available in Grafana, please see [Embrace's documentation](https://embrace.io/docs/partners/grafana/)
 
-- [Request a Demo of Embrace](https://dash.embrace.io/signup?utm_source=website&utm_medium=docs&utm_campaign=grafana-plugin+)
+- [Request a Demo of Embrace](https://get.embrace.io/grafana/requestdemo/)
 - [Embrace Free Trial](https://embrace.io/request-demo/?utm_source=website&utm_medium=docs&utm_campaign=grafana-plugin+)
 
 ## Getting Help ##
