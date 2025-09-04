@@ -17,7 +17,7 @@ jobs:
       - name: Setup Node.js environment
         uses: actions/setup-node@v5
         with:
-          node-version: '16'
+          node-version: '18'
           cache: yarn
       - name: Install dependencies
         run: yarn install --immutable --prefer-offline
@@ -37,7 +37,7 @@ jobs:
       - name: Setup Node.js environment
         uses: actions/setup-node@v5
         with:
-          node-version: '16'
+          node-version: '18'
           cache: yarn
       - name: Install dependencies
         run: yarn install --immutable --prefer-offline
@@ -65,7 +65,7 @@ jobs:
       - name: Setup Node.js environment
         uses: actions/setup-node@v5
         with:
-          node-version: '16'
+          node-version: '18'
           cache: 'yarn'
 #      - name: Update version in package.json and plugin.json
 #        run: |
