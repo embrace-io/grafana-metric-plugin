@@ -62,7 +62,9 @@ jobs:
       - e2e-tests
     if: ${{ github.event_name == 'release' && contains(fromJSON('["released", "prereleased"]'), github.event.action) }}
     permissions:
+      attestations: write
       contents: write
+      id-token: write
     env:
       FILENAME: embraceio-metric-app-${{ github.event.release.tag_name }}.zip
     steps:
@@ -97,3 +99,7 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
           GITHUB_EVENT_RELEASE_TAG_NAME: ${{ github.event.release.tag_name }}
+      - name: Generate artifact attestation
+        uses: actions/attest-build-provenance@v3
+        with:
+          subject-path: '${{ env.FILENAME }}'
