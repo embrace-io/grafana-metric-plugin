@@ -1496,9 +1496,9 @@
   integrity sha512-+SgQeBQ1pT6D/E3/dEdADqTrlgdIGuexUZ8EU+8KxQFKUeFeU7/3z/ayI2q/wpJ/Kr6WxBBNlrST6aOKia19Ag==
 
 "@grafana/tsconfig@^2.0.0":
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/@grafana/tsconfig/-/tsconfig-2.0.0.tgz#277aba907ddbe0301dc37248923e6bd2b68f5151"
-  integrity sha512-cxC3Htv/GidI5FeVGAzj/lYZTMMz/Cfsc8VOQFO3Ichjx3hUjyjeoBUIpVSVMnIjKUdA5ycdxtMYPHIuIrk8+A==
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/@grafana/tsconfig/-/tsconfig-2.0.1.tgz#231d46e996e53cd04367da850c03f1ef1170484c"
+  integrity sha512-yGNQWQDlxFfklzMfk0i8qnDqKOvIGc0Aqe62zLS4LTqptkhnyLEVsdaVmX99m3QFOcBiiFn8scREDzGeF2iNvQ==
 
 "@grafana/ui@9.2.5":
   version "9.2.5"
