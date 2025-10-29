@@ -2683,71 +2683,74 @@
   dependencies:
     "@sinonjs/commons" "^1.7.0"
 
-"@swc/core-darwin-arm64@1.3.58":
-  version "1.3.58"
-  resolved "https://registry.yarnpkg.com/@swc/core-darwin-arm64/-/core-darwin-arm64-1.3.58.tgz#0d87c46a0d18ded014a8b3c212cc3303f0f9f44a"
-  integrity sha512-NwX9768gcM4HjBEE+2VCMB+h/5bwNDF4DngOTJa9w02l3AwGZXWE66X4ulJQ3Oxv8EAz1nzWb8lbi3XT+WCtmQ==
+"@swc/core-darwin-arm64@1.14.0":
+  version "1.14.0"
+  resolved "https://registry.yarnpkg.com/@swc/core-darwin-arm64/-/core-darwin-arm64-1.14.0.tgz#1db614b52ed7369f47be2a1c6b5e80b6be923898"
+  integrity sha512-uHPC8rlCt04nvYNczWzKVdgnRhxCa3ndKTBBbBpResOZsRmiwRAvByIGh599j+Oo6Z5eyTPrgY+XfJzVmXnN7Q==
 
-"@swc/core-darwin-x64@1.3.58":
-  version "1.3.58"
-  resolved "https://registry.yarnpkg.com/@swc/core-darwin-x64/-/core-darwin-x64-1.3.58.tgz#5c2a73e0e688e3e4d71477994b7aec92ce1ee8fe"
-  integrity sha512-XUdKXRIu8S7N5kmrtd0Nxf3uPIgZhQbgVHPhkvYH+Qwb+uXsdltKPiRwhvLI9M0yF3fvIrKtGJ8qUJdH5ih4zw==
+"@swc/core-darwin-x64@1.14.0":
+  version "1.14.0"
+  resolved "https://registry.yarnpkg.com/@swc/core-darwin-x64/-/core-darwin-x64-1.14.0.tgz#900e56924994d0e723e6088e2a2e1a1c08c59a95"
+  integrity sha512-2SHrlpl68vtePRknv9shvM9YKKg7B9T13tcTg9aFCwR318QTYo+FzsKGmQSv9ox/Ua0Q2/5y2BNjieffJoo4nA==
 
-"@swc/core-linux-arm-gnueabihf@1.3.58":
-  version "1.3.58"
-  resolved "https://registry.yarnpkg.com/@swc/core-linux-arm-gnueabihf/-/core-linux-arm-gnueabihf-1.3.58.tgz#0c03afc6cf279562bd53a53e5191ed6608ae4779"
-  integrity sha512-9M3/5RzjCXnz94a1kxb+0eBzqyZkxzeYTMmvcjIJSy7MVvWNuy0wHuh+x96X/6197g40P9LkzAiZ7q0DvxSPQQ==
+"@swc/core-linux-arm-gnueabihf@1.14.0":
+  version "1.14.0"
+  resolved "https://registry.yarnpkg.com/@swc/core-linux-arm-gnueabihf/-/core-linux-arm-gnueabihf-1.14.0.tgz#3c84966a8c6e308b0788d1c7875bce23c65134c6"
+  integrity sha512-SMH8zn01dxt809svetnxpeg/jWdpi6dqHKO3Eb11u4OzU2PK7I5uKS6gf2hx5LlTbcJMFKULZiVwjlQLe8eqtg==
 
-"@swc/core-linux-arm64-gnu@1.3.58":
-  version "1.3.58"
-  resolved "https://registry.yarnpkg.com/@swc/core-linux-arm64-gnu/-/core-linux-arm64-gnu-1.3.58.tgz#79797b0ede57803781146ecaa1cf521b979de2e4"
-  integrity sha512-hRjJIJdnYUAZlUi9ACCrsfS/hSFP4MmZRaUVOlQOif578Rw4kQlxsxFd1Rh1bhzUCid0KyZOyCvRzHSD/2ONgw==
+"@swc/core-linux-arm64-gnu@1.14.0":
+  version "1.14.0"
+  resolved "https://registry.yarnpkg.com/@swc/core-linux-arm64-gnu/-/core-linux-arm64-gnu-1.14.0.tgz#5190097d2ca4ea8b198f46a3abe2272331575b54"
+  integrity sha512-q2JRu2D8LVqGeHkmpVCljVNltG0tB4o4eYg+dElFwCS8l2Mnt9qurMCxIeo9mgoqz0ax+k7jWtIRHktnVCbjvQ==
 
-"@swc/core-linux-arm64-musl@1.3.58":
-  version "1.3.58"
-  resolved "https://registry.yarnpkg.com/@swc/core-linux-arm64-musl/-/core-linux-arm64-musl-1.3.58.tgz#4de5e07f1a16c0bcd789bf080fe74c164b499ad0"
-  integrity sha512-3wrqZbRhbTKtxcQebMAMGKtyypL6BQU0OwqzAk4dBIgm9GaH45xu7sH2OekfHMp3vuj4uWuere+tYtr9HU7xcQ==
+"@swc/core-linux-arm64-musl@1.14.0":
+  version "1.14.0"
+  resolved "https://registry.yarnpkg.com/@swc/core-linux-arm64-musl/-/core-linux-arm64-musl-1.14.0.tgz#420f510102a37feda0e3dfb8d21651515251476b"
+  integrity sha512-uofpVoPCEUjYIv454ZEZ3sLgMD17nIwlz2z7bsn7rl301Kt/01umFA7MscUovFfAK2IRGck6XB+uulMu6aFhKQ==
 
-"@swc/core-linux-x64-gnu@1.3.58":
-  version "1.3.58"
-  resolved "https://registry.yarnpkg.com/@swc/core-linux-x64-gnu/-/core-linux-x64-gnu-1.3.58.tgz#a924eecc77ef2035c6ff2d58e9631efd28b54027"
-  integrity sha512-yOI5ucB+8g+gtp4L2AydPBThobZ2I3WR/dU2T+x2DFIE5Qpe/fqt6HPTFb02qmvqvOw36TLT45pRwAe4cY5LAw==
+"@swc/core-linux-x64-gnu@1.14.0":
+  version "1.14.0"
+  resolved "https://registry.yarnpkg.com/@swc/core-linux-x64-gnu/-/core-linux-x64-gnu-1.14.0.tgz#953f741d577a81f6e1e1b434856c48eb674cdeb7"
+  integrity sha512-quTTx1Olm05fBfv66DEBuOsOgqdypnZ/1Bh3yGXWY7ANLFeeRpCDZpljD9BSjdsNdPOlwJmEUZXMHtGm3v1TZQ==
 
-"@swc/core-linux-x64-musl@1.3.58":
-  version "1.3.58"
-  resolved "https://registry.yarnpkg.com/@swc/core-linux-x64-musl/-/core-linux-x64-musl-1.3.58.tgz#b5d04049d3b404035cc0a261754d95a938f10323"
-  integrity sha512-xPwxgPLxSWXsK9Yf792SsUmLKISdShAI9o/Kk6jjv0r7PRBS25hZ5FyOjAb/rMbAzDcmyGKHevKc3TMUPSMjwg==
+"@swc/core-linux-x64-musl@1.14.0":
+  version "1.14.0"
+  resolved "https://registry.yarnpkg.com/@swc/core-linux-x64-musl/-/core-linux-x64-musl-1.14.0.tgz#bdf241062d1433ba617ffe1451dccde8923a28a2"
+  integrity sha512-caaNAu+aIqT8seLtCf08i8C3/UC5ttQujUjejhMcuS1/LoCKtNiUs4VekJd2UGt+pyuuSrQ6dKl8CbCfWvWeXw==
 
-"@swc/core-win32-arm64-msvc@1.3.58":
-  version "1.3.58"
-  resolved "https://registry.yarnpkg.com/@swc/core-win32-arm64-msvc/-/core-win32-arm64-msvc-1.3.58.tgz#cb75b087b8a85eca6ef7a9fe22be8e13d91fcb1c"
-  integrity sha512-HW61trwkYGiaFprc+fJay6IKJ3scdquSdJaXsyumGF+jc/5kokQzNfY+JH6RWpk0/8zHnUWI4e+iNGuMYxYGeA==
+"@swc/core-win32-arm64-msvc@1.14.0":
+  version "1.14.0"
+  resolved "https://registry.yarnpkg.com/@swc/core-win32-arm64-msvc/-/core-win32-arm64-msvc-1.14.0.tgz#960919015bc31c46a8fc10df5c384add651df91e"
+  integrity sha512-EeW3jFlT3YNckJ6V/JnTfGcX7UHGyh6/AiCPopZ1HNaGiXVCKHPpVQZicmtyr/UpqxCXLrTgjHOvyMke7YN26A==
 
-"@swc/core-win32-ia32-msvc@1.3.58":
-  version "1.3.58"
-  resolved "https://registry.yarnpkg.com/@swc/core-win32-ia32-msvc/-/core-win32-ia32-msvc-1.3.58.tgz#f2cc7a0b451dd283110a7b1f57d3f1675b9f045a"
-  integrity sha512-nODSJgHCY8GU6qHR9ieoxshaFD5GYGrPen/6VUvQkGwnV/yMI2Yvecgd1vLSUV4v67ZruPhIkP9OJruD+Juwhg==
+"@swc/core-win32-ia32-msvc@1.14.0":
+  version "1.14.0"
+  resolved "https://registry.yarnpkg.com/@swc/core-win32-ia32-msvc/-/core-win32-ia32-msvc-1.14.0.tgz#826a76b2af0e4df4dee3674e91734cb85eb7b21f"
+  integrity sha512-dPai3KUIcihV5hfoO4QNQF5HAaw8+2bT7dvi8E5zLtecW2SfL3mUZipzampXq5FHll0RSCLzlrXnSx+dBRZIIQ==
 
-"@swc/core-win32-x64-msvc@1.3.58":
-  version "1.3.58"
-  resolved "https://registry.yarnpkg.com/@swc/core-win32-x64-msvc/-/core-win32-x64-msvc-1.3.58.tgz#5fb1c9a7b529fbb906868bb48a5545ed444b9ad9"
-  integrity sha512-If/uQ3MW6Pdtah2FHhfBY2xBdBXBJzOusXpFQAkwNbaxnrJgpqIIxpYphwsJMDQp6ooSS3U90YizW7mJNxb6UA==
+"@swc/core-win32-x64-msvc@1.14.0":
+  version "1.14.0"
+  resolved "https://registry.yarnpkg.com/@swc/core-win32-x64-msvc/-/core-win32-x64-msvc-1.14.0.tgz#75fe708a702f57f176fd640eb9af394cf767be91"
+  integrity sha512-nm+JajGrTqUA6sEHdghDlHMNfH1WKSiuvljhdmBACW4ta4LC3gKurX2qZuiBARvPkephW9V/i5S8QPY1PzFEqg==
 
 "@swc/core@^1.2.144":
-  version "1.3.58"
-  resolved "https://registry.yarnpkg.com/@swc/core/-/core-1.3.58.tgz#3371c6c660694124c2f1cc60ce6b99fd3df3f8c3"
-  integrity sha512-tSDcHXMBQIo2ohQ/0ryZnUA+0mBrVhe49+cR+QsFru+XEhCok1BLqdE6cZ2a+sgZ1I+Dmw8aTxYm8Ox64PSKPQ==
+  version "1.14.0"
+  resolved "https://registry.yarnpkg.com/@swc/core/-/core-1.14.0.tgz#ff7d287fbac6b6fd3adedf7b440cadfd0c389df6"
+  integrity sha512-oExhY90bes5pDTVrei0xlMVosTxwd/NMafIpqsC4dMbRYZ5KB981l/CX8tMnGsagTplj/RcG9BeRYmV6/J5m3w==
+  dependencies:
+    "@swc/counter" "^0.1.3"
+    "@swc/types" "^0.1.25"
   optionalDependencies:
-    "@swc/core-darwin-arm64" "1.3.58"
-    "@swc/core-darwin-x64" "1.3.58"
-    "@swc/core-linux-arm-gnueabihf" "1.3.58"
-    "@swc/core-linux-arm64-gnu" "1.3.58"
-    "@swc/core-linux-arm64-musl" "1.3.58"
-    "@swc/core-linux-x64-gnu" "1.3.58"
-    "@swc/core-linux-x64-musl" "1.3.58"
-    "@swc/core-win32-arm64-msvc" "1.3.58"
-    "@swc/core-win32-ia32-msvc" "1.3.58"
-    "@swc/core-win32-x64-msvc" "1.3.58"
+    "@swc/core-darwin-arm64" "1.14.0"
+    "@swc/core-darwin-x64" "1.14.0"
+    "@swc/core-linux-arm-gnueabihf" "1.14.0"
+    "@swc/core-linux-arm64-gnu" "1.14.0"
+    "@swc/core-linux-arm64-musl" "1.14.0"
+    "@swc/core-linux-x64-gnu" "1.14.0"
+    "@swc/core-linux-x64-musl" "1.14.0"
+    "@swc/core-win32-arm64-msvc" "1.14.0"
+    "@swc/core-win32-ia32-msvc" "1.14.0"
+    "@swc/core-win32-x64-msvc" "1.14.0"
 
 "@swc/counter@^0.1.3":
   version "0.1.3"
@@ -2768,6 +2771,13 @@
   dependencies:
     "@jest/create-cache-key-function" "^27.4.2"
     jsonc-parser "^3.2.0"
+
+"@swc/types@^0.1.25":
+  version "0.1.25"
+  resolved "https://registry.yarnpkg.com/@swc/types/-/types-0.1.25.tgz#b517b2a60feb37dd933e542d93093719e4cf1078"
+  integrity sha512-iAoY/qRhNH8a/hBvm3zKj9qQ4oc2+3w1unPJa2XvTK3XjeLXtzcCingVPw/9e5mn1+0yPqxcBGp9Jf0pkfMb1g==
+  dependencies:
+    "@swc/counter" "^0.1.3"
 
 "@testing-library/dom@>=7", "@testing-library/dom@^8.0.0":
   version "8.19.0"
