@@ -21,7 +21,7 @@ jobs:
       - name: Setup Node.js environment
         uses: actions/setup-node@v6
         with:
-          node-version: '22'
+          node-version-file: '.nvmrc'
           cache: yarn
       - name: Install dependencies
         run: yarn install --immutable --prefer-offline
@@ -42,7 +42,7 @@ jobs:
       - name: Setup Node.js environment
         uses: actions/setup-node@v6
         with:
-          node-version: '22'
+          node-version-file: '.nvmrc'
           cache: yarn
       - name: Install dependencies
         run: yarn install --immutable --prefer-offline
@@ -67,19 +67,27 @@ jobs:
       id-token: write
     env:
       FILENAME: embraceio-metric-app-${{ github.event.release.tag_name }}.zip
+      GITHUB_EVENT_RELEASE_TAG_NAME: ${{ github.event.release.tag_name }}
     steps:
       - uses: actions/checkout@v6
         with:
           fetch-depth: 0
-          persist-credentials: false
+          persist-credentials: true
       - name: Setup Node.js environment
         uses: actions/setup-node@v6
         with:
-          node-version: '22'
+          node-version-file: '.nvmrc'
           cache: 'yarn'
-#      - name: Update version in package.json and plugin.json
-#        run: |
-#          sed -i 's/"version": "0.0.0"/"version": "${{ github.event.release.tag_name }}"/g' package.json src/plugin.json
+      - name: Update version in package.json
+        run: |
+          sed -i 's/"version": ".*"/"version": "${GITHUB_EVENT_RELEASE_TAG_NAME}"/g' package.json
+
+          git config --global user.name "embrace-ci"
+          git config --global user.email "embrace-ci@users.noreply.github.com"
+          git add package.json
+          git diff --cached
+          git commit -m "CI/CD: Bump version to ${GITHUB_EVENT_RELEASE_TAG_NAME}"
+          git push
       - name: Install dependencies
         run: yarn install --pure-lockfile
       - name: Build dependencies
@@ -94,12 +102,15 @@ jobs:
         run: zip -r $FILENAME ./embraceio-metric-app
       - name: Generate MD5 hash file
         run: echo "$(md5sum ./$FILENAME | awk '{print $1}')" > md5.txt
-      - name: Upload release
+      - name: Upload release artifacts
         run: gh release upload "${GITHUB_EVENT_RELEASE_TAG_NAME}" $FILENAME md5.txt --clobber
         env:
           GH_TOKEN: ${{ github.token }}
-          GITHUB_EVENT_RELEASE_TAG_NAME: ${{ github.event.release.tag_name }}
       - name: Generate artifact attestation
         uses: actions/attest-build-provenance@v3
         with:
           subject-path: '${{ env.FILENAME }}'
+      - name: Finalize GitHub release
+        run: gh release edit "${GITHUB_EVENT_RELEASE_TAG_NAME}" --draft=false --latest
+        env:
+          GH_TOKEN: ${{ github.token }}
