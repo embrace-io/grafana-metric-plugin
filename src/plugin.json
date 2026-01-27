@@ -4,8 +4,8 @@
   "name": "Embrace",
   "id": "embraceio-metric-app",
   "info": {
-    "keywords": ["android","ios","mobile","anr"],
-    "description": "Mobile observability and data platform that empowers mobile teams to deliver optimal user experiences",
+    "keywords": ["android","ios","mobile","anr","opentelemetry"],
+    "description": "Mobile and web observability and data platform that empowers teams to deliver optimal user experiences",
     "author": {
       "name": "Embrace",
       "url": "https://embrace.io/"
